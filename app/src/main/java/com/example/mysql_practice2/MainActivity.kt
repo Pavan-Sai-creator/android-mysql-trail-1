@@ -43,10 +43,10 @@ class MainActivity : AppCompatActivity() {
             try{
                 Class.forName("com.mysql.jdbc.Driver").newInstance()
                 var conn = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:3306/pavandb","root","Sadguru@1520")
+                    "jdbc:mysql://majorproject-db1.crjbtooqk9d1.ap-south-1.rds.amazonaws.com:3306/pavandb","admin","Sadguru1520")
                 Log.d("Testing","OK!")
                 var statement : Statement = conn.createStatement()
-                var resultSet : ResultSet = statement.executeQuery("SELECT * FROM mystudents;")
+                var resultSet : ResultSet = statement.executeQuery("SELECT * FROM students;")
                 while (resultSet.next()){
                     records += resultSet.getString(1)+" "+resultSet.getString(2)+"\n"
                 }
